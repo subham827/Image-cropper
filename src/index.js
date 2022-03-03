@@ -7,12 +7,11 @@ function ImageCropper(props) {
   const { imageToCrop, onImageCropped } = props;
 
   const [cropConfig, setCropConfig] = useState(
-    // default crop config
+    
     {
       unit: "%",
-      width: 30,
-      aspect: 16 / 9
-    }
+      width: 40,
+      aspect: 1 / 1    }
   );
 
   const [imageRef, setImageRef] = useState();
@@ -22,11 +21,10 @@ function ImageCropper(props) {
       const croppedImage = await getCroppedImage(
         imageRef,
         crop,
-        "croppedImage.jpeg" // destination filename
+        "croppedImage.jpeg" 
       );
 
-      // calling the props function to expose
-      // croppedImage to the parent component
+      
       onImageCropped(croppedImage);
     }
   }
@@ -77,7 +75,7 @@ function ImageCropper(props) {
       onImageLoaded={(imageRef) => setImageRef(imageRef)}
       onComplete={(cropConfig) => cropImage(cropConfig)}
       onChange={(cropConfig) => setCropConfig(cropConfig)}
-      crossorigin="anonymous" // to avoid CORS-related problems
+      crossorigin="anonymous" //
     />
   );
 }
