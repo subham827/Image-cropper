@@ -7,7 +7,7 @@ function ImageCropper(props) {
   const { imageToCrop, onImageCropped } = props;
 
   const [cropConfig, setCropConfig] = useState(
-    // default crop config
+    
     {
       unit: "%",
       width: 30,
@@ -25,14 +25,13 @@ function ImageCropper(props) {
         "croppedImage.jpeg" // destination filename
       );
 
-      // calling the props function to expose
-      // croppedImage to the parent component
+      
       onImageCropped(croppedImage);
     }
   }
 
   function getCroppedImage(sourceImage, cropConfig, fileName) {
-    // creating the cropped image from the source image
+    
     const canvas = document.createElement("canvas");
     const scaleX = sourceImage.naturalWidth / sourceImage.width;
     const scaleY = sourceImage.naturalHeight / sourceImage.height;
@@ -77,7 +76,7 @@ function ImageCropper(props) {
       onImageLoaded={(imageRef) => setImageRef(imageRef)}
       onComplete={(cropConfig) => cropImage(cropConfig)}
       onChange={(cropConfig) => setCropConfig(cropConfig)}
-      crossorigin="anonymous" // to avoid CORS-related problems
+      crossorigin="anonymous" 
     />
   );
 }
