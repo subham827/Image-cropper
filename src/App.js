@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import ImageCropper from "./components/ImageCropper";
+import ImageCropper from "./index";
 
 function App() {
   const [imageToCrop, setImageToCrop] = useState(undefined);
